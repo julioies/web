@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            /*border: 1px solid black;*/
+
+        }
+
+        #wrapper {
+            /*primera rejilla*/
+            color: white;
+            font-size: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 20vh 60vh 20vh;
+            grid-template-areas:
+                'header header header header'
+                'main main main aside'
+                'footer footer footer footer';
+
+        }
+
+        header {
+            background-color: red;
+            color: white;
+            grid-area: header;
+
+            display: flex;
+            /*aplicamos flex para centrar el texto*/
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        main {
+            /*segunda rejilla*/
+            background-color: aquamarine;
+            padding: 40px;
+            grid-area: main;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-gap: 20px 20px;
+            grid-template-areas:
+                'arriba arriba arriba'
+                'izquierda izquierda derecha';
+
+        }
+
+        /*ELEMENTOS DENTRO DE LA REJILLA*/
+        article {
+            display: flex;
+            /*aplicamos flex para centrar el texto*/
+            justify-content: center;
+            align-items: center;
+        }
+
+        article:nth-of-type(1) {
+            grid-area: arriba;
+            background-color: orange;
+        }
+
+        article:nth-of-type(2) {
+            grid-area: izquierda;
+            background-color: royalblue;
+        }
+
+        article:nth-of-type(3) {
+            grid-area: derecha;
+            background-color: tomato;
+        }
+
+        aside {
+            background-color: cadetblue;
+            grid-area: aside;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            background-color: cornflowerblue;
+            grid-area: footer;
+            font-size: 30px;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>TÍTULO</h1>
+        </header>
+
+        <main>
+            <article>
+                <p>ARTÍCULO 1</p>
+            </article>
+            <article>
+                <p>ARTÍCULO 2</p>
+            </article>
+            <article>
+                <p>ARTÍCULO 3</p>
+            </article>
+        </main>
+        
+        <aside>
+            <p>ASIDE</p>
+        </aside>
+
+        <footer>
+            <p>Página realizada por: JULIO</p>
+        </footer>
+    </div>
+</body>
+
+</html>
